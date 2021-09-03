@@ -6,3 +6,4 @@ Each of these separate pages were scraped and have been reformatted to include n
 
 In the future, I will probably add another statistical section that is separate from players (team data). I would like to have the season averages alongside the selected year that is selected by the user when viewing the team data for that season. 
 I am also just in the beginning stages of adding more independent analytical testing on the data, so keep an eye out for more in the future!
+Please leave comments, suggestions, or concerns!
