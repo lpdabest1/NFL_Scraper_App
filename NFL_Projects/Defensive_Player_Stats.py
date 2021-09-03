@@ -19,7 +19,7 @@ Data is from 1980 to 2020.
     selected_year = st.sidebar.selectbox('Year', list(reversed(range(1980,2021))))
 
 # Web scraping of NFL player stats
-# https://www.pro-football-reference.com/years/2019/rushing.htm
+# https://www.pro-football-reference.com/years/2019/defense.htm
     @st.cache
     def load_data(year):
         url = "https://www.pro-football-reference.com/years/" + str(year) + "/defense.htm"
@@ -98,7 +98,7 @@ Data is from 1980 to 2020.
 
 
 
-# Download NBA player stats data
+# Download NFL player stats data
 # https://discuss.streamlit.io/t/how-to-download-file-in-streamlit/1806
     def filedownload(df):
         csv = df.to_csv(index=False)
