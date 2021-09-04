@@ -62,7 +62,15 @@ Data is from 1970 to 2020.
 
 
         # Renaming/Reformatting Certain Columns under incorrect naming
+        playerstats.rename(columns={'Att.1': 'Rush Att',
+                                    'Yds.1': 'Rush Yds',
+                                    'TD.1': 'Rush TD',
+                                    'Yds.2': 'Rec Yds',
+                                    'TD.2': 'Rec TD',
+                                    'TD.3': 'Total TD',
 
+
+                                    }, inplace= True)
 
         return playerstats
     playerstats = load_data(selected_year)
