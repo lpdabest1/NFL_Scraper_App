@@ -7,6 +7,17 @@ import Kick_Returning_Stats
 import Scoring_Stats
 import Fantasy_Stats
 import streamlit as st
+import streamlit.components.v1 as components
+
+components.html(
+'''
+<html lang="en">
+    <head>
+    <meta property="og:image" content="%PUBLIC_URL%/nfl_app_scraper_web.PNG" />
+    </head>
+</html>
+''' 
+)
 
 Pages = {
     "Passing Stats": Passing_Stats,
