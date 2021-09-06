@@ -4,6 +4,20 @@ import base64
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import streamlit.components.v1 as components
+components.html(
+'''
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>NFL Web Scraper App</title>
+
+    <meta name="social-image" property="og:image" content="%PUBLIC_URL%/nfl_app_scraper_web.PNG" />
+    </head>
+</html>
+''' 
+)
+
 
 def app():
     st.title('NFL Football Stats (Passing) Explorer')

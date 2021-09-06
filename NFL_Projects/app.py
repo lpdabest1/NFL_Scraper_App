@@ -8,7 +8,6 @@ import Scoring_Stats
 import Fantasy_Stats
 import streamlit as st
 import streamlit.components.v1 as components
-
 components.html(
 '''
 <!DOCTYPE html>
@@ -19,7 +18,7 @@ components.html(
     <meta name="social-image" property="og:image" content="%PUBLIC_URL%/nfl_app_scraper_web.PNG" />
     </head>
 </html>
-''', 
+''' 
 )
 
 Pages = {
