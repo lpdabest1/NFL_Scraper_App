@@ -11,11 +11,10 @@ import streamlit.components.v1 as components
 
 components.html(
 '''
-<html lang="en">
     <head>
     <meta property="og:image" content="%PUBLIC_URL%/nfl_app_scraper_web.PNG" />
     </head>
-</html>
+
 ''' 
 )
 
