@@ -1,11 +1,3 @@
-st.set_page_config(
-    page_title="NFL Web Scraper App",
-    page_description="",
-
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
-
 import Passing_Stats
 import Rushing_Stats
 import Receiving_Stats
@@ -17,6 +9,13 @@ import Fantasy_Stats
 import streamlit as st
 import streamlit.components.v1 as components
 
+st.set_page_config(
+    page_title="NFL Web Scraper App",
+    page_description="",
+
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 #components.html(
 #'''
