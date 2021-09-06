@@ -11,8 +11,6 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="NFL Web Scraper App",
-    page_description="",
-
     layout="wide",
     initial_sidebar_state="expanded",
 )
