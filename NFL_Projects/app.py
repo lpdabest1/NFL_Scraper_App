@@ -1,3 +1,11 @@
+st.set_page_config(
+    page_title="NFL Web Scraper App",
+    page_description="",
+
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
 import Passing_Stats
 import Rushing_Stats
 import Receiving_Stats
@@ -8,18 +16,20 @@ import Scoring_Stats
 import Fantasy_Stats
 import streamlit as st
 import streamlit.components.v1 as components
-components.html(
-'''
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    <title>NFL Web Scraper App</title>
 
-    <meta name="social-image" property="og:image" content="%PUBLIC_URL%/nfl_app_scraper_web.PNG" />
-    </head>
-</html>
-''' 
-)
+
+#components.html(
+#'''
+#<!DOCTYPE html>
+#<html lang="en">
+#    <head>
+#    <title>NFL Web Scraper App</title>
+#
+#    <meta name="social-image" property="og:image" content="%PUBLIC_URL%/nfl_app_scraper_web.png" />
+#    </head>
+#</html>
+#''' 
+#)
 
 Pages = {
     "Passing Stats": Passing_Stats,
