@@ -28,11 +28,30 @@ Data is from 1940 to 2020.
    
         raw = raw.fillna(0)
         playerstats = raw.drop(['Rk'], axis=1)
+
+                # Converting Columns Data Type to int Type
+        playerstats = playerstats.astype({'Att':'int',
+                                          'Yds':'int',
+                                          'TD':'int',
+                                          'Lng':'int',
+                                          '1D':'int',
+                                          'Y/A':'str',
+                                          'Y/G':'str',
+                                          'Fmb':'int'                                       
+                                            })
+
+
+
+
+        # Renaming/Reformatting Certain Columns under incorrect naming
+        playerstats.rename(columns={'Tm':'Team'
+                                    }, inplace= True)
+
         return playerstats
     playerstats = load_data(selected_year)
 
 # Sidebar - Team selection
-    sorted_unique_team = sorted(playerstats.Tm.unique())
+    sorted_unique_team = sorted(playerstats.Team.unique())
     selected_team = st.sidebar.multiselect('Team', sorted_unique_team, sorted_unique_team)
 
 # Sidebar - Position selection
@@ -46,7 +65,7 @@ Data is from 1940 to 2020.
 
 # Filtering data
 # Team
-    df_selected_team = playerstats[(playerstats.Tm.isin(selected_team)) & (playerstats.Pos.isin(selected_pos))]
+    df_selected_team = playerstats[(playerstats.Team.isin(selected_team)) & (playerstats.Pos.isin(selected_pos))]
 
 # Player
 #df_selected_player = playerstats[(playerstats.Player.isin(selected_player)) & (playerstats.Pos.isin(selected_pos))]
@@ -91,5 +110,193 @@ Data is from 1940 to 2020.
         st.pyplot(f)
 
 
+    # User Personal Visualization Choices
+    st.title('Data Visualizations')
+    st.markdown('Select an option/checkbox on the left sidebar under the section Data visualizations to see the various Data Visualizations.')
+    st.sidebar.subheader('Data Visualizations')
+
+    # Categorical Plots Section
+    if st.sidebar.checkbox('Categorical Plots'):
+        st.subheader('Categorical Plots')
+        st.info('Below are all of the categorical plots available to try and test out. Choose a few of them (if not all), you can customize the data you want to examine to see specific results or behaviors/trends')
+
+        # if 'Histogram' button is selected
+        df_selected_team.to_csv('categorical_plots.csv', index=False)
+        df = pd.read_csv('categorical_plots.csv')
+
+
+        unique_columns = ['Team','Pos','Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+        statistical_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+
+        # Selectable columns
+        st.sidebar.info('Select two variables on the sidebar to conduct categorical plot(s)')
+        df_columns = st.sidebar.selectbox("Select first variable/column",unique_columns)
+        df_stats = st.sidebar.selectbox("Select second variable/column", statistical_columns)
+
+        if st.checkbox('Bar Plot'):
+            st.subheader('Bar Plot')
+            
+
+            #Graphing Bar Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.barplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+        if st.checkbox('Strip Plot'):
+            st.subheader('Strip Plot')
+
+            #Graphing Strip Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.stripplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+
+        if st.checkbox('Box Plot'):
+            st.subheader('Box Plot')
+
+            #Graphing Box Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.boxplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+
+        if st.checkbox('Violin Plot'):
+            st.subheader('Violin Plot')
+
+            #Graphing Violin Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.violinplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+
+
+    # Distribution/Relational Plots Section
+    if st.sidebar.checkbox('Distribution & Relational Plots'):
+        st.subheader('Distibution/Relational Plots')
+        st.info('Below are all of the distribution/relational plots available to try and test out. Choose a few of them (if not all), you can customize the data you want to examine to see specific results or behaviors/trends')
+
+        # if 'Histogram' button is selected
+        df_selected_team.to_csv('dist_plots.csv', index=False)
+        df = pd.read_csv('dist_plots.csv')
+
+
+        unique_columns = ['Team','Pos','Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+        statistical_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+
+        # Selectable columns
+        st.sidebar.info('Select two variables on the sidebar to conduct distribution/relational plot(s)')
+        df_columns = st.sidebar.selectbox("Dist/Relationa Plot: Select first variable/column",unique_columns)
+        df_stats = st.sidebar.selectbox("Dist/Relationa Plot: Select second variable/column", statistical_columns)
+
+        if st.checkbox('Scatter Plot'):
+            st.subheader('Scatter Plot')
+            
+
+            #Graphing Bar Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.scatterplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+        if st.checkbox('Line Plot'):
+            st.subheader('Line Plot')
+
+            #Graphing Strip Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.lineplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+
+        if st.checkbox('Histogram Plot'):
+            st.subheader('Histogram Plot')
+
+            #Graphing Box Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.histplot(x=df[df_columns] , y=df[df_stats], cbar=True, cbar_kws=dict(shrink=.75)) #change this back to histplot
+            st.pyplot(f)
+
+
+        if st.checkbox('KDE Plot'):
+            st.subheader('KDE Plot')
+
+            #Graphing Violin Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.kdeplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+
+    # Regression Plots Section
+    if st.sidebar.checkbox('Regression Plots'):
+        st.subheader('Regression Plots')
+        st.info('Below are all of the regession plots available to try and test out. Choose a few of them (if not all), you can customize the data you want to examine to see specific results or behaviors/trends')
+
+        # if 'Histogram' button is selected
+        df_selected_team.to_csv('regression_plots.csv', index=False)
+        df = pd.read_csv('regression_plots.csv')
+
+
+        unique_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+        statistical_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+
+        # Selectable columns
+        st.sidebar.info('Select two variables on the sidebar to conduct regession plot(s)')
+        df_columns = st.sidebar.selectbox("Select first variable/column to test",unique_columns)
+        df_stats = st.sidebar.selectbox("Select second variable/column to test", statistical_columns)
+
+        if st.checkbox('Regression Plot'):
+            st.subheader('Regression Plot')
+            
+
+            #Graphing Bar Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.regplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
+
+        if st.checkbox('Residual Plot'):
+            st.subheader('Residual Plot')
+
+            #Graphing Strip Plot
+            with sns.axes_style("white"):
+            
+                f, ax = plt.subplots(figsize=(12,5))
+                plt.xticks(rotation=90)
+                #ax = sns.histplot(df[df_stats])
+                ax = sns.residplot(x=df[df_columns] , y=df[df_stats])
+            st.pyplot(f)
 
 

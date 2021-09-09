@@ -11,7 +11,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="NFL Web Scraper App",
-    layout="wide",
+    layout="centered",
     initial_sidebar_state="expanded",
 )
 
@@ -48,3 +48,4 @@ page = Pages[selection]
 
 if page:
     page.app()
+
