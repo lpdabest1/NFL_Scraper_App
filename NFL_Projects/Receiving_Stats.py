@@ -135,7 +135,7 @@ Data is from 1940 to 2020.
         df = pd.read_csv('categorical_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Tgt','Rec','Ctch%','Yds','Yds/Rec','TD','1D','Lng','Yds/Tgt','Rec/G','Yds/G','Fmb']
+        unique_columns = ['Player','Team','Pos','Tgt','Rec','Ctch%','Yds','Yds/Rec','TD','1D','Lng','Yds/Tgt','Rec/G','Yds/G','Fmb']
         statistical_columns = ['Tgt','Rec','Ctch%','Yds','Yds/Rec','TD','1D','Lng','Yds/Tgt','Rec/G','Yds/G','Fmb']
 
         # Selectable columns
@@ -206,7 +206,7 @@ Data is from 1940 to 2020.
         df = pd.read_csv('dist_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Tgt','Rec','Ctch%','Yds','Yds/Rec','TD','1D','Lng','Yds/Tgt','Rec/G','Yds/G','Fmb']
+        unique_columns = ['Player','Team','Pos','Tgt','Rec','Ctch%','Yds','Yds/Rec','TD','1D','Lng','Yds/Tgt','Rec/G','Yds/G','Fmb']
         statistical_columns = ['Tgt','Rec','Ctch%','Yds','Yds/Rec','TD','1D','Lng','Yds/Tgt','Rec/G','Yds/G','Fmb']
 
         # Selectable columns

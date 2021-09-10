@@ -131,7 +131,7 @@ Data is from 1980 to 2020.
         df = pd.read_csv('categorical_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Int','Yds','TD','Lng','PD','FF','Fmb','FR','Fmb Yds','Fmb TD','Sk','Comb','Solo','Ast','TFL','QBHits','Sfty']
+        unique_columns = ['Player','Team','Pos','Int','Yds','TD','Lng','PD','FF','Fmb','FR','Fmb Yds','Fmb TD','Sk','Comb','Solo','Ast','TFL','QBHits','Sfty']
         statistical_columns = ['Int','Yds','TD','Lng','PD','FF','Fmb','FR','Fmb Yds','Fmb TD','Sk','Comb','Solo','Ast','TFL','QBHits','Sfty']
 
         # Selectable columns
@@ -202,7 +202,7 @@ Data is from 1980 to 2020.
         df = pd.read_csv('dist_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Int','Yds','TD','Lng','PD','FF','Fmb','FR','Fmb Yds','Fmb TD','Sk','Comb','Solo','Ast','TFL','QBHits','Sfty']
+        unique_columns = ['Player','Team','Pos','Int','Yds','TD','Lng','PD','FF','Fmb','FR','Fmb Yds','Fmb TD','Sk','Comb','Solo','Ast','TFL','QBHits','Sfty']
         statistical_columns = ['Int','Yds','TD','Lng','PD','FF','Fmb','FR','Fmb Yds','Fmb TD','Sk','Comb','Solo','Ast','TFL','QBHits','Sfty']
 
         # Selectable columns
@@ -226,7 +226,7 @@ Data is from 1980 to 2020.
         if st.checkbox('Line Plot'):
             st.subheader('Line Plot')
 
-            #Graphing Strip Plot
+            #Graphing Line Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -239,7 +239,7 @@ Data is from 1980 to 2020.
         if st.checkbox('Histogram Plot'):
             st.subheader('Histogram Plot')
 
-            #Graphing Box Plot
+            #Graphing Hist Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -252,7 +252,7 @@ Data is from 1980 to 2020.
         if st.checkbox('KDE Plot'):
             st.subheader('KDE Plot')
 
-            #Graphing Violin Plot
+            #Graphing KDE Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -284,7 +284,7 @@ Data is from 1980 to 2020.
             st.subheader('Regression Plot')
             
 
-            #Graphing Bar Plot
+            #Graphing Reg Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -296,7 +296,7 @@ Data is from 1980 to 2020.
         if st.checkbox('Residual Plot'):
             st.subheader('Residual Plot')
 
-            #Graphing Strip Plot
+            #Graphing Res Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))

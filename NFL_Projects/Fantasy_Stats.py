@@ -153,7 +153,7 @@ Data is from 1970 to 2020.
         df = pd.read_csv('categorical_plots.csv')
 
 
-        unique_columns = ['Team','FantPos','Cmp','Att','Int','Yds','TD','Rush Att','Rush Yds','Y/A','Rush TD','Tgt','Rec','Rec Yds','Y/R','Rec TD','Fmb','FL','Total TD','2PM','2PP','FantPt','PPR','DKPt','FDPt','VBD','PosRank','OvRank']
+        unique_columns = ['Player','Team','FantPos','Cmp','Att','Int','Yds','TD','Rush Att','Rush Yds','Y/A','Rush TD','Tgt','Rec','Rec Yds','Y/R','Rec TD','Fmb','FL','Total TD','2PM','2PP','FantPt','PPR','DKPt','FDPt','VBD','PosRank','OvRank']
         statistical_columns = ['Cmp','Att','Int','Yds','TD','Rush Att','Rush Yds','Y/A','Rush TD','Tgt','Rec','Rec Yds','Y/R','Rec TD','Fmb','FL','Total TD','2PM','2PP','FantPt','PPR','DKPt','FDPt','VBD','PosRank','OvRank']
 
         # Selectable columns
@@ -224,7 +224,7 @@ Data is from 1970 to 2020.
         df = pd.read_csv('dist_plots.csv')
 
 
-        unique_columns = ['Team','FantPos','Cmp','Att','Int','Yds','TD','Rush Att','Rush Yds','Y/A','Rush TD','Tgt','Rec','Rec Yds','Y/R','Rec TD','Fmb','FL','Total TD','2PM','2PP','FantPt','PPR','DKPt','FDPt','VBD','PosRank','OvRank']
+        unique_columns = ['Player','Team','FantPos','Cmp','Att','Int','Yds','TD','Rush Att','Rush Yds','Y/A','Rush TD','Tgt','Rec','Rec Yds','Y/R','Rec TD','Fmb','FL','Total TD','2PM','2PP','FantPt','PPR','DKPt','FDPt','VBD','PosRank','OvRank']
         statistical_columns = ['Team','FantPos','Cmp','Att','Int','Yds','TD','Rush Att','Rush Yds','Y/A','Rush TD','Tgt','Rec','Rec Yds','Y/R','Rec TD','Fmb','FL','Total TD','2PM','2PP','FantPt','PPR','DKPt','FDPt','VBD','PosRank','OvRank']
 
         # Selectable columns

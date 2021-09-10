@@ -163,7 +163,7 @@ Data is from 1940 to 2020.
         df = pd.read_csv('categorical_plots.csv')
 
 
-        unique_columns = ['Team','Pos','FGA (0-19yds)','FGM (0-19yds)','FGA (20-29yds)','FGM (20-29yds)','FGA (30-39yds)','FGM (30-39yds)','FGA (40-49yds)','FGM (40-49yds)','FGA (50+ yds)','FGM (50+ yds)',
+        unique_columns = ['Player','Team','Pos','FGA (0-19yds)','FGM (0-19yds)','FGA (20-29yds)','FGM (20-29yds)','FGA (30-39yds)','FGM (30-39yds)','FGA (40-49yds)','FGM (40-49yds)','FGA (50+ yds)','FGM (50+ yds)',
                           'Total FGA','Total FGM','FG Lng','FG%','XPA','XPM','XP%','KO','KO Yds','TB','TB%','KO Avg','Punt','Punt Yds','Punt Lng','Blck','Y/P']
         statistical_columns = ['FGA (0-19yds)','FGM (0-19yds)','FGA (20-29yds)','FGM (20-29yds)','FGA (30-39yds)','FGM (30-39yds)','FGA (40-49yds)','FGM (40-49yds)','FGA (50+ yds)','FGM (50+ yds)',
                           'Total FGA','Total FGM','FG Lng','FG%','XPA','XPM','XP%','KO','KO Yds','TB','TB%','KO Avg','Punt','Punt Yds','Punt Lng','Blck','Y/P']
@@ -236,7 +236,7 @@ Data is from 1940 to 2020.
         df = pd.read_csv('dist_plots.csv')
 
 
-        unique_columns = ['Team','Pos','FGA (0-19yds)','FGM (0-19yds)','FGA (20-29yds)','FGM (20-29yds)','FGA (30-39yds)','FGM (30-39yds)','FGA (40-49yds)','FGM (40-49yds)','FGA (50+ yds)','FGM (50+ yds)',
+        unique_columns = ['Player','Team','Pos','FGA (0-19yds)','FGM (0-19yds)','FGA (20-29yds)','FGM (20-29yds)','FGA (30-39yds)','FGM (30-39yds)','FGA (40-49yds)','FGM (40-49yds)','FGA (50+ yds)','FGM (50+ yds)',
                           'Total FGA','Total FGM','FG Lng','FG%','XPA','XPM','XP%','KO','KO Yds','TB','TB%','KO Avg','Punt','Punt Yds','Punt Lng','Blck','Y/P']
         statistical_columns = ['FGA (0-19yds)','FGM (0-19yds)','FGA (20-29yds)','FGM (20-29yds)','FGA (30-39yds)','FGM (30-39yds)','FGA (40-49yds)','FGM (40-49yds)','FGA (50+ yds)','FGM (50+ yds)',
                           'Total FGA','Total FGM','FG Lng','FG%','XPA','XPM','XP%','KO','KO Yds','TB','TB%','KO Avg','Punt','Punt Yds','Punt Lng','Blck','Y/P']

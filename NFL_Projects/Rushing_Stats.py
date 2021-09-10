@@ -125,8 +125,8 @@ Data is from 1940 to 2020.
         df = pd.read_csv('categorical_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
-        statistical_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+        unique_columns = ['Player','Team','Pos','Att','Yds','TD','1D','Lng','Y/A','Y/G','Fmb']
+        statistical_columns = ['Att','Yds','TD','1D','Lng','Y/A','Y/G','Fmb']
 
         # Selectable columns
         st.sidebar.info('Select two variables on the sidebar to conduct categorical plot(s)')
@@ -196,8 +196,8 @@ Data is from 1940 to 2020.
         df = pd.read_csv('dist_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
-        statistical_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+        unique_columns = ['Player','Team','Pos','Att','TD','Yds','1D','Lng','Y/A','Y/G','Fmb']
+        statistical_columns = ['Att','Yds','TD','1D','Lng','Y/A','Y/G','Fmb']
 
         # Selectable columns
         st.sidebar.info('Select two variables on the sidebar to conduct distribution/relational plot(s)')
@@ -266,8 +266,8 @@ Data is from 1940 to 2020.
         df = pd.read_csv('regression_plots.csv')
 
 
-        unique_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
-        statistical_columns = ['Att','Yds','1D','Lng','Y/A','Y/G','Fmb']
+        unique_columns = ['Att','Yds','TD','1D','Lng','Y/A','Y/G','Fmb']
+        statistical_columns = ['Att','Yds','TD','1D','Lng','Y/A','Y/G','Fmb']
 
         # Selectable columns
         st.sidebar.info('Select two variables on the sidebar to conduct regession plot(s)')

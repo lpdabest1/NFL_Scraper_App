@@ -1,7 +1,10 @@
+from pandas.core.indexes.base import Index
+from seaborn.matrix import _index_to_label
 import streamlit as st
 import pandas as pd
 import base64
 import matplotlib.pyplot as plt
+import matplotlib_inline as ln
 import seaborn as sns
 import numpy as np
 
@@ -38,7 +41,7 @@ Data is from 2006 to 2020.
                                           'Att':'int',
                                           'Cmp%':'str',
                                           'Yds':'int',
-                                          'TD':'str',
+                                          'TD':'int',
                                           'TD%':'str',
                                           'Int':'int',
                                           'Int%':'str',
@@ -140,13 +143,16 @@ Data is from 2006 to 2020.
         df = pd.read_csv('categorical_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Cmp','Att','Cmp%','Yds','TD','TD%','Int','Int%','1D','Lng','Y/A','AY/A','Y/G','Rate','Sk','Sack Yds','NY/A','ANY/A','Sk%']
+        unique_columns = ['Player','Team','Pos','Cmp','Att','Cmp%','Yds','TD','TD%','Int','Int%','1D','Lng','Y/A','AY/A','Y/G','Rate','Sk','Sack Yds','NY/A','ANY/A','Sk%']
         statistical_columns = ['Cmp','Att','Cmp%','Yds','TD','TD%','Int','Int%','1D','Lng','Y/A','AY/A','Y/G','Rate','Sk','Sack Yds','NY/A','ANY/A','Sk%']
 
         # Selectable columns
         st.sidebar.info('Select two variables on the sidebar to conduct categorical plot(s)')
         df_columns = st.sidebar.selectbox("Select first variable/column",unique_columns)
         df_stats = st.sidebar.selectbox("Select second variable/column", statistical_columns)
+
+        # Sort Values for X axis
+        
 
         if st.checkbox('Bar Plot'):
             st.subheader('Bar Plot')
@@ -160,6 +166,7 @@ Data is from 2006 to 2020.
                 #ax = sns.histplot(df[df_stats])
                 ax = sns.barplot(x=df[df_columns] , y=df[df_stats])
             st.pyplot(f)
+
 
         if st.checkbox('Strip Plot'):
             st.subheader('Strip Plot')
@@ -211,7 +218,7 @@ Data is from 2006 to 2020.
         df = pd.read_csv('dist_plots.csv')
 
 
-        unique_columns = ['Team','Pos','Cmp','Att','Cmp%','Yds','TD','TD%','Int','Int%','1D','Lng','Y/A','AY/A','Y/G','Rate','Sk','Sack Yds','NY/A','ANY/A','Sk%']
+        unique_columns = ['Player','Team','Pos','Cmp','Att','Cmp%','Yds','TD','TD%','Int','Int%','1D','Lng','Y/A','AY/A','Y/G','Rate','Sk','Sack Yds','NY/A','ANY/A','Sk%']
         statistical_columns = ['Cmp','Att','Cmp%','Yds','TD','TD%','Int','Int%','1D','Lng','Y/A','AY/A','Y/G','Rate','Sk','Sack Yds','NY/A','ANY/A','Sk%']
 
         # Selectable columns
@@ -223,7 +230,7 @@ Data is from 2006 to 2020.
             st.subheader('Scatter Plot')
             
 
-            #Graphing Bar Plot
+            #Graphing Scatter Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -232,10 +239,14 @@ Data is from 2006 to 2020.
                 ax = sns.scatterplot(x=df[df_columns] , y=df[df_stats])
             st.pyplot(f)
 
+            
+
+
+
         if st.checkbox('Line Plot'):
             st.subheader('Line Plot')
 
-            #Graphing Strip Plot
+            #Graphing Line Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -245,10 +256,13 @@ Data is from 2006 to 2020.
             st.pyplot(f)
 
 
+
+
+
         if st.checkbox('Histogram Plot'):
             st.subheader('Histogram Plot')
 
-            #Graphing Box Plot
+            #Graphing Hist Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -261,7 +275,7 @@ Data is from 2006 to 2020.
         if st.checkbox('KDE Plot'):
             st.subheader('KDE Plot')
 
-            #Graphing Violin Plot
+            #Graphing KDE Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
@@ -293,23 +307,22 @@ Data is from 2006 to 2020.
             st.subheader('Regression Plot')
             
 
-            #Graphing Bar Plot
+            #Graphing Reg Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
                 plt.xticks(rotation=90)
-                #ax = sns.histplot(df[df_stats])
+                
                 ax = sns.regplot(x=df[df_columns] , y=df[df_stats])
             st.pyplot(f)
 
         if st.checkbox('Residual Plot'):
             st.subheader('Residual Plot')
 
-            #Graphing Strip Plot
+            #Graphing Residual Plot
             with sns.axes_style("white"):
             
                 f, ax = plt.subplots(figsize=(12,5))
                 plt.xticks(rotation=90)
-                #ax = sns.histplot(df[df_stats])
                 ax = sns.residplot(x=df[df_columns] , y=df[df_stats])
             st.pyplot(f)

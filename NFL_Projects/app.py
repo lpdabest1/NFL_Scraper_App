@@ -15,18 +15,6 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-#components.html(
-#'''
-#<!DOCTYPE html>
-#<html lang="en">
-#    <head>
-#    <title>NFL Web Scraper App</title>
-#
-#    <meta name="social-image" property="og:image" content="%PUBLIC_URL%/nfl_app_scraper_web.png" />
-#    </head>
-#</html>
-#''' 
-#)
 
 Pages = {
     "Passing Stats": Passing_Stats,
