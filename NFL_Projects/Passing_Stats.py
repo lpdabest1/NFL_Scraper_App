@@ -3,8 +3,8 @@ from seaborn.matrix import _index_to_label
 import streamlit as st
 import pandas as pd
 import base64
-import matplotlib.pyplot as plt
-import matplotlib_inline as ln
+#import matplotlib.pyplot as plt
+#import matplotlib_inline as ln
 import seaborn as sns
 import numpy as np
 
