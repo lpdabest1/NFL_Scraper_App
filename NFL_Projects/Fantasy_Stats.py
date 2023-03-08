@@ -12,11 +12,11 @@ def app():
 This app performs simple webscraping of NFL Football player stats data (focusing on Fantasy)!
 * **Python libraries:** base64, pandas, streamlit, numpy, matplotlib, seaborn
 * **Data source:** [pro-football-reference.com](https://www.pro-football-reference.com/).
-Data is from 1970 to 2020.
+Data is from 1970 to 2022.
 """)
 
     st.sidebar.header('User Customization')
-    selected_year = st.sidebar.selectbox('Year', list(reversed(range(1970,2021))))
+    selected_year = st.sidebar.selectbox('Year', list(reversed(range(1970,2023))))
 
 # Web scraping of NFL player stats
 # https://www.pro-football-reference.com/years/2019/fantasy.htm

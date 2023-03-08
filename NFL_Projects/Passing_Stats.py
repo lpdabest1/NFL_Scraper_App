@@ -1,10 +1,8 @@
 from pandas.core.indexes.base import Index
-from seaborn.matrix import _index_to_label
 import streamlit as st
 import pandas as pd
 import base64
-#import matplotlib.pyplot as plt
-#import matplotlib_inline as ln
+import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
@@ -17,11 +15,11 @@ def app():
 This app performs simple webscraping of NFL Football player stats data (focusing on Passing)!
 * **Python libraries:** base64, pandas, streamlit, numpy, matplotlib, seaborn
 * **Data source:** [pro-football-reference.com](https://www.pro-football-reference.com/).
-Data is from 2006 to 2020.
+Data is from 2006 to 2022.
 """)
 
     st.sidebar.header('User Customization')
-    selected_year = st.sidebar.selectbox('Year', list(reversed(range(2006,2021))))
+    selected_year = st.sidebar.selectbox('Year', list(reversed(range(2006,2023))))
 
 # Web scraping of NFL player stats
 # https://www.pro-football-reference.com/years/2019/passing.htm
