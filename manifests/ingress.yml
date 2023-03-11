@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "devcluster-8dd1"
+    labels:
+        app: "devcluster-8dd1"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: streamlit-nfl-scraper-devcluster-8dd1.9a69d214ae3d48f88c0e.eastus.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "devcluster-8dd1"
+                servicePort: 8501
