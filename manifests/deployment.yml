@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "devcluster-8dd1"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "devcluster-8dd1"
+  template:
+    metadata:
+      labels:
+        app: "devcluster-8dd1"
+    spec:
+      containers:
+        - name: "devcluster-8dd1"
+          image: "nflscraper.azurecr.io/devcluster"
+          ports:
+          - containerPort: 8501
